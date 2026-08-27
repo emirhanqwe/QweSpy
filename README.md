@@ -2,6 +2,7 @@
 Chrome Web sayfası hakkında soru sorabildiğin bir eklenti
 
 **API Sağlayıcısı :** *https://openrouter.ai/*
+
 **AI Modeli :** *inclusionai/ling-3.0-flash-fin:free*
 
 **Eklentiyi yüklemek için bu adımları takip edin:**
