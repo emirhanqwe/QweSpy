@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QweSpy</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      width: 360px;
+      min-height: 460px;
+      margin: 0;
+      padding: 16px;
+      background: #0f172a;
+      color: #f1f5f9;
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #1e293b;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #6366f1;
+    }
+    h1 { margin: 0; font-size: 16px; }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      color: #94a3b8;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    textarea, input {
+      width: 100%;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 10px;
+      outline: none;
+      background: #1e293b;
+      color: #f8fafc;
+      font-size: 13px;
+    }
+    textarea {
+      min-height: 82px;
+      resize: vertical;
+    }
+    textarea:focus, input:focus { border-color: #6366f1; }
+    input { margin-bottom: 10px; }
+    button {
+      width: 100%;
+      border: 0;
+      border-radius: 8px;
+      padding: 11px;
+      background: #4f46e5;
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: #6366f1; }
+    button:disabled { opacity: .6; cursor: wait; }
+    .settings {
+      margin-bottom: 14px;
+      padding: 10px;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      background: #111827;
+    }
+    .settings summary {
+      color: #94a3b8;
+      font-size: 11px;
+      cursor: pointer;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .hint {
+      margin: 6px 0 0;
+      color: #64748b;
+      font-size: 10px;
+      line-height: 1.4;
+    }
+    .response-wrap { margin-top: 14px; }
+    #cevap {
+      min-height: 150px;
+      max-height: 240px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      padding: 12px;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      background: #111827;
+      color: #cbd5e1;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .footer {
+      margin-top: 10px;
+      text-align: center;
+      color: #475569;
+      font-size: 10px;
+    }
+    .error { color: #fca5a5 !important; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="dot"></div>
+    <h1>QweSpy</h1>
+  </div>
+
+  <details class="settings">
+    <summary>OpenRouter API anahtarı</summary>
+    <div style="margin-top:10px">
+      <input id="apiKey" type="password" autocomplete="off" placeholder="sk-or-v1-...">
+      <p class="hint">Anahtar yalnızca bu tarayıcıdaki eklenti depolamasında tutulur. Paylaşılan veya kaynak koda gömülmüş anahtar kullanmayın.</p>
+    </div>
+  </details>
+
+  <label for="soru">Sayfaya ne sormak istiyorsun?</label>
+  <textarea id="soru" placeholder="Örn: Bu sayfada anlatılan ana fikir nedir?"></textarea>
+
+  <button id="sorBtn" type="button">Yapay Zekaya Sor</button>
+
+  <div class="response-wrap">
+    <label>Yapay zeka yanıtı</label>
+    <div id="cevap">Sorunuzu bekliyor...</div>
+  </div>
+
+  <div class="footer">OpenRouter • Ling-3.0-flash</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

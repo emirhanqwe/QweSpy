@@ -1,1 +1,27 @@
-
+{
+  "manifest_version": 3,
+"name": "QweSpy",
+  "version": "1.4.5",
+  "description": "Bulunduğunuz sayfadaki metinler hakkında yapay zekaya sorular sorun.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://openrouter.ai/*"
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  }
+}
